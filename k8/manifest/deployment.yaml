@@ -1,0 +1,25 @@
+apiVersion: app/v1
+kind: Deployment
+metadata:
+ name: test
+ labels: 
+  app: test
+  env: qa
+spec: 
+ template:
+  metadata:
+   name: test
+   labels:
+    app: test
+    env: qa
+  spec:
+   containers: 
+   - name: pandu
+     image: thaniish4/pandu
+     ports: 
+     - containerPort: 8080
+ replicas: 2
+ selector: 
+   matchLabel: 
+    app: test
+    env: qa

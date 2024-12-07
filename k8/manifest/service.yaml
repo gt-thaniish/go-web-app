@@ -1,0 +1,14 @@
+appVersion: v1
+kind: Service
+metadata:
+ name: pandu2
+ labels: 
+  name: pandu2
+spec:
+ type: ClusterIp
+ selector: 
+  name: pandu2
+ ports:
+ - port: 80
+   targetport: 8080
+   protocol: TCP
